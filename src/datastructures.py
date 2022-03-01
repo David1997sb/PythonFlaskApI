@@ -14,7 +14,7 @@ class FamilyStructure:
 
         # example list of members
         self._members = [{
-            "id": self._generateId(),
+            "id": 92432016,
             "first_name": "John",
             "last_name": self.last_name,
             "age": 32,
@@ -30,8 +30,15 @@ class FamilyStructure:
          return "members was added"
 
     def delete_member(self, id):
+        #results = map(lambda obj: obj["id"], members)
+        memberDelete = filter(lambda obj: obj["id"] == id, self._members)
+        result = list(memberDelete)
+        print(list.index(result))
+        #self._members.remove(result[0])
+        return "Miembro con el id " + str(id) + " eliminado"
+
         # fill this method and update the return
-        pass
+        
 
     def get_member(self, id):
         # fill this method and update the return
